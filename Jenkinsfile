@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Release'){
             steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhubcredentails', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: '70d5a7a0-c903-4106-a3c1-65339772b047', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                   sh'''
                   docker login -u $USERNAME -p $PASSWORD
                   docker build -t deepadeepa/project-final:${BUILD_NUMBER} .
