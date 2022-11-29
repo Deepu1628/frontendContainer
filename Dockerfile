@@ -1,13 +1,3 @@
-FROM node:14
+FROM nginx
 
-WORKDIR /app
-
-RUN npm install nodemon -g
-
-COPY package.json .
-
-RUN npm install
-
-COPY . .
-
-CMD [ "npx", "nodemon", "functions.js" ]
+COPY ./ /usr/share/nginx/html/
